@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
+model_name_or_path: /mnt/llmmolecularpredict/LLM/Llama-3.2-3B
 # adapter_name_or_path: saves/llama3-8b/lora/sft
 
 ### method
@@ -11,12 +11,12 @@ finetuning_type: lora
 eval_dataset: alpaca_en_demo
 template: llama3
 cutoff_len: 1024
-max_samples: 50
+max_samples: 1
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
-output_dir: saves/llama3-8b/lora/predict
+output_dir: /mnt/llmmolecularpredict/saves/llama1B/lora/predict
 overwrite_output_dir: false
 
 ### eval
