@@ -1,0 +1,30 @@
+### model 
+model_name_or_path: /mnt/llmmolecularpredict/LLM/Llama-3.2-3B
+# adapter_name_or_path: saves/llama3-8b/lora/sft
+
+### method
+stage: sft
+do_predict: true
+finetuning_type: lora
+
+### dataset
+eval_dataset: alpaca_en_demo
+template: llama3
+cutoff_len: 1024
+max_samples: 1
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### tokenizer
+tokenizer:
+  legacy: false
+  path: /mnt/llmmolecularpredict/LLM/Llama-3.2-3B/tokenizer.json  # 根據實際路徑調整
+
+### output
+output_dir: /mnt/llmmolecularpredict/saves/llama1B/lora/predict
+overwrite_output_dir: false
+
+### eval
+per_device_eval_batch_size: 1
+predict_with_generate: true
+ddp_timeout: 180000000
