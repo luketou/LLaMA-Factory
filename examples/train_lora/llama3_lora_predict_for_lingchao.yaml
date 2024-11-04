@@ -1,0 +1,29 @@
+model_args:
+  model_name_or_path: /home/lingchao/桌面/LLM_model/Llama-3.2-1B
+  # adapter_name_or_path: saves/llama3-8b/lora/sft
+
+training_args:
+  stage: sft
+  do_predict: true
+  finetuning_type: lora
+
+data_args:
+  eval_dataset: alpaca_en_demo
+  template: llama3.2
+  cutoff_len: 1024
+  max_samples: 1
+  overwrite_cache: true
+  preprocessing_num_workers: 16
+
+processing_args:
+  tokenizer_path: /home/lingchao/桌面/LLM_model/Llama-3.2-1B/tokenizer.json
+  legacy: false
+
+output_args:
+  output_dir: /home/lingchao/桌面
+  overwrite_output_dir: false
+
+eval_args:
+  per_device_eval_batch_size: 1
+  predict_with_generate: true
+  ddp_timeout: 180000000

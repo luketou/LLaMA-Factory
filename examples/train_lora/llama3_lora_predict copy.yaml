@@ -9,7 +9,7 @@ finetuning_type: lora
 
 ### dataset
 eval_dataset: alpaca_en_demo
-template: llama3
+template: llama3.1
 cutoff_len: 1024
 max_samples: 1
 overwrite_cache: true
